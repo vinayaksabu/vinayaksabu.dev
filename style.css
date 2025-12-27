@@ -117,3 +117,75 @@ body.theme-light .liquid-switch { background: rgba(255,255,255,0.5); }
 .btn-primary { background: var(--text); color: var(--bg); width: 100%; padding: 14px; border-radius: 14px; font-weight: 700; border: none; cursor: pointer; display: flex; justify-content: center; gap: 8px; }
 .btn-outline { width: 100%; padding: 12px; border-radius: 14px; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.2s; }
 .btn-outline:hover { background: var(--glass); border-color: var(--accent); }
+/* --- MOBILE FIXES (Paste at the bottom of style.css) --- */
+
+/* 1. Fix Body Height for Mobile Browsers */
+body {
+    /* Use dynamic viewport height to account for address bars */
+    height: 100dvh; 
+    /* Ensure content doesn't get hidden behind notches */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 2. Fix Header Overlap */
+@media (max-width: 768px) {
+    .top-bar {
+        /* Stop centering absolute elements, use flex spacing instead */
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .theme-toggle-btn {
+        /* Remove absolute positioning so it pushes the switch */
+        position: relative;
+        left: auto;
+        flex-shrink: 0; /* Prevent button from squishing */
+    }
+
+    /* Make the switch flexible so it fits the remaining space */
+    .liquid-switch {
+        width: auto;
+        flex-grow: 1; /* Expand to fill space */
+        max-width: 260px; /* Don't get too big */
+    }
+
+    /* Shrink text slightly if needed */
+    .switch-txt {
+        font-size: 10px;
+    }
+    
+    /* Adjust blob size for flexible width */
+    .blob-pill {
+        width: 48%; /* Use percentage instead of fixed px */
+    }
+    .liquid-switch.switched .blob-pill {
+        transform: translateX(100%); /* Slide 100% of its own width */
+        left: 2%; /* Micro adjustment */
+    }
+}
+
+/* 3. Fix Bottom Dock Visibility */
+.glass-dock {
+    /* Lift it higher to clear the Android/iOS home bar */
+    bottom: 30px; 
+    
+    /* Add safe area support for iPhone X+ */
+    margin-bottom: env(safe-area-inset-bottom);
+    
+    /* Ensure it stays on top */
+    z-index: 999;
+}
+
+@media (max-height: 800px) {
+    /* Extra lift for smaller phones */
+    .glass-dock {
+        bottom: 50px;
+    }
+    /* Add extra padding to scroll area so content isn't hidden behind dock */
+    .scroll-canvas {
+        padding-bottom: 140px; 
+    }
+}
