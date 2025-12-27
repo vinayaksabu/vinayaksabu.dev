@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vinayak Sabu | Hawkins OS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-eng theme-dark">
+
+    <div class="bg-layer bg-lab"></div>
+    <div class="bg-layer bg-upside"></div>
+    <div class="particles-container"></div>
+    <div class="vignette"></div>
+
+    <main class="ios-frame">
+        
+        <header class="top-bar">
+            <button class="circle-btn theme-toggle-btn" onclick="toggleTheme()">
+                <div class="icon-stack">
+                    <i data-lucide="sun" class="icon-sun"></i>
+                    <i data-lucide="moon" class="icon-moon"></i>
+                </div>
+            </button>
+
+            <div class="liquid-switch">
+                <div class="blob-pill"></div>
+                <button id="btn-eng" class="switch-txt active" onclick="setTab('eng')">HAWKINS LAB</button>
+                <button id="btn-create" class="switch-txt" onclick="setTab('create')">UPSIDE DOWN</button>
+            </div>
+
+            <div style="width: 44px;"></div>
+        </header>
+
+        <div class="scroll-canvas">
+            
+            <div class="hero-id-container">
+                <div class="hero-avatar-frame">
+                    <img id="profile-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" class="hero-img">
+                    <div class="scan-line"></div>
+                </div>
+                <div class="hero-text-block">
+                    <h1 class="glitch-name" data-text="Vinayak Sabu">Vinayak Sabu</h1>
+                    <div class="id-badge">
+                        <span class="status-indicator"></span>
+                        <span id="role-label" class="mono-label">SYSTEM_ARCHITECT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                
+                <div id="view-eng" class="view-layer active">
+                    
+                    <div class="filter-bar">
+                        <button class="filter-btn active" onclick="filterGrid('all')">ALL_DATA</button>
+                        <button class="filter-btn" onclick="filterGrid('about')">BIO</button>
+                        <button class="filter-btn" onclick="filterGrid('project')">PROJECTS</button>
+                        <button class="filter-btn" onclick="filterGrid('skill')">SKILLS</button>
+                        <button class="filter-btn" onclick="filterGrid('award')">AWARDS</button>
+                    </div>
+
+                    <div class="bento-layout">
+                        
+                        <div class="glass-card full-width-card item-about">
+                            <div class="p-6 flex flex-col justify-center h-full">
+                                <div class="flex items-center gap-2 mb-3 opacity-60">
+                                    <i data-lucide="fingerprint" class="w-4 h-4 text-accent"></i>
+                                    <span class="text-[10px] font-mono tracking-widest uppercase">Operator Bio</span>
+                                </div>
+                                <p class="text-sm leading-relaxed opacity-90">
+                                    Electrical & Electronics Engineering student at GEC Idukki. <span class="text-accent font-bold">IEEE Xtreme Ambassador</span> & Developer. I build systems that merge hardware logic with software fluidity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card full-width-card item-project group" onclick="openModal('hostel')">
+                            <div class="card-inner flex flex-row items-center justify-between h-full p-6">
+                                <div class="flex flex-col justify-between h-full">
+                                    <span class="tech-tag">FLAGSHIP</span>
+                                    <div>
+                                        <h2 class="text-3xl font-bold font-display mb-1 mt-4">Hostel_OS</h2>
+                                        <p class="text-sm opacity-70">Full-stack reactive architecture.</p>
+                                    </div>
+                                </div>
+                                <div class="arrow-circle">
+                                    <i data-lucide="arrow-right" class="w-6 h-6 text-accent"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card card-tall item-skill">
+                            <div class="p-6 h-full flex flex-col">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="cpu" class="w-5 h-5 text-accent"></i>
+                                        <h3 class="font-bold text-lg font-display">Technical Core</h3>
+                                    </div>
+                                    <span class="text-[10px] font-mono opacity-50 border border-current px-1 rounded">V.2025</span>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
+                                            <span>C++ / PYTHON</span>
+                                            <span>95%</span>
+                                        </div>
+                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[95%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
+                                            <span>REACT / NODE</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-accent w-[85%]"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-current/10">
+                                        <span class="skill-pill">Firebase</span>
+                                        <span class="skill-pill">SQL</span>
+                                        <span class="skill-pill">Git</span>
+                                        <span class="skill-pill">Flutter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card card-tall item-project" onclick="openModal('mobile')">
+                            <div class="p-6 h-full flex flex-col justify-between">
+                                <i data-lucide="smartphone" class="w-8 h-8 text-accent"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold font-display">Campus Connect</h3>
+                                    <p class="text-xs opacity-60 mt-1">Flutter App v1.2</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card stat-card item-award" onclick="openModal('extreme')">
+                            <i data-lucide="zap" class="w-8 h-8 text-accent mb-2"></i>
+                            <h3 class="text-4xl font-bold font-display">Top 5%</h3>
+                            <p class="text-[10px] uppercase tracking-widest opacity-60">Global Rank</p>
+                        </div>
+
+                        <div class="glass-card stack-card item-skill">
+                            <div class="p-6">
+                                <i data-lucide="pen-tool" class="w-6 h-6 text-accent mb-3"></i>
+                                <h3 class="font-bold text-sm mb-2">Design & Tools</h3>
+                                <div class="flex flex-wrap gap-2 text-[10px] font-mono opacity-80">
+                                    <span class="border border-current/20 px-2 py-1 rounded">Figma</span>
+                                    <span class="border border-current/20 px-2 py-1 rounded">Photoshop</span>
+                                    <span class="border border-current/20 px-2 py-1 rounded">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="view-create" class="view-layer hidden-right">
+                    <div class="masonry-layout">
+                        <div class="glass-card insta-card col-span-2 h-[200px] relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-red-900/10 z-0"></div>
+                            <div class="relative z-10 flex flex-col items-center justify-center h-full">
+                                <i data-lucide="instagram" class="w-10 h-10 text-accent mb-3"></i>
+                                <h2 class="text-4xl font-bold font-display text-accent tracking-tighter">@EL_VINU</h2>
+                                <button class="mt-4 px-6 py-1.5 rounded-full border border-accent text-accent text-xs hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest">Enter The Void</button>
+                            </div>
+                        </div>
+                        <div class="glass-card mall-card col-span-2 h-[160px] relative overflow-hidden group cursor-pointer">
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-red-900/20 z-0"></div>
+                            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
+                                <span class="text-[9px] font-bold bg-accent text-white px-2 py-0.5 rounded mb-2 uppercase">Hub</span>
+                                <h3 class="text-xl font-bold font-display mb-1">STARCOURT MALL</h3>
+                                <p class="text-[9px] text-accent opacity-80 uppercase tracking-widest">Merch / Blogs / Recs</p>
+                            </div>
+                        </div>
+                        <div class="glass-card card-tall relative overflow-hidden group" onclick="openModal('branding')">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" class="img-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                            <div class="absolute bottom-4 left-4 z-10">
+                                <h3 class="text-xl font-bold text-accent font-display">Poster Art</h3>
+                            </div>
+                        </div>
+                        <div class="glass-card media-card h-[180px]" onclick="openModal('promo')">
+                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&q=80" class="img-cover">
+                            <div class="play-overlay">
+                                <div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-white text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-container">
+                    <div class="glass-pill-row">
+                        <a href="#" class="footer-btn">
+                            <i data-lucide="coffee" class="w-4 h-4"></i>
+                            <span>Buy Coffee</span>
+                        </a>
+                        <div class="divider-v"></div>
+                        <a href="#" class="footer-btn">
+                            <i data-lucide="qr-code" class="w-4 h-4"></i>
+                            <span>UPI</span>
+                        </a>
+                        <div class="divider-v"></div>
+                        <a href="mailto:hi@vinayak.dev" class="footer-btn">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <nav class="glass-dock">
+            <a href="#" class="dock-icon"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="dock-icon main"><span class="tooltip">RESUME</span><i data-lucide="file-text"></i></a>
+            <a href="#" class="dock-icon"><i data-lucide="github"></i></a>
+        </nav>
+
+        <div id="modal-overlay" class="modal-wrapper">
+            <div class="modal-backdrop" onclick="closeModal()"></div>
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+                <div class="modal-header">
+                    <img id="m-img" src="" alt="">
+                    <div class="header-fade"></div>
+                </div>
+                <div class="modal-body">
+                    <span id="m-cat" class="modal-tag">Category</span>
+                    <h2 id="m-title" class="modal-title">Title</h2>
+                    <p id="m-desc" class="modal-desc">Description text...</p>
+                    <div class="modal-actions">
+                        <button class="btn-primary w-full"><i data-lucide="download" class="w-4 h-4"></i> Download Report</button>
+                        <div class="flex gap-3 mt-3">
+                            <button class="btn-outline w-full">Photos</button>
+                            <button class="btn-outline w-full">Video</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
