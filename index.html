@@ -36,7 +36,8 @@
                 <button id="btn-create" class="switch-txt" onclick="setTab('create')">UPSIDE DOWN</button>
             </div>
 
-            <div style="width: 40px;"></div> </header>
+            <div style="width: 40px;"></div>
+        </header>
 
         <div class="scroll-canvas">
             
@@ -58,12 +59,14 @@
                 
                 <div id="view-eng" class="view-layer active">
                     
-                    <div class="filter-bar">
-                        <button class="filter-btn active" onclick="filterGrid('all')">ALL</button>
-                        <button class="filter-btn" onclick="filterGrid('about')">BIO</button>
-                        <button class="filter-btn" onclick="filterGrid('project')">PROJECTS</button>
-                        <button class="filter-btn" onclick="filterGrid('skill')">SKILLS</button>
-                        <button class="filter-btn" onclick="filterGrid('award')">AWARDS</button>
+                    <div class="filter-wrapper">
+                        <div class="filter-bar">
+                            <button class="filter-btn active" onclick="filterGrid('all')">ALL</button>
+                            <button class="filter-btn" onclick="filterGrid('about')">BIO</button>
+                            <button class="filter-btn" onclick="filterGrid('project')">PROJECTS</button>
+                            <button class="filter-btn" onclick="filterGrid('skill')">SKILLS</button>
+                            <button class="filter-btn" onclick="filterGrid('award')">AWARDS</button>
+                        </div>
                     </div>
 
                     <div class="bento-layout">
@@ -95,44 +98,6 @@
                             </div>
                         </div>
 
-                        <div class="glass-card card-tall item-skill">
-                            <div class="p-6 h-full flex flex-col">
-                                <div class="flex items-center justify-between mb-6">
-                                    <div class="flex items-center gap-2">
-                                        <i data-lucide="cpu" class="w-5 h-5 text-accent"></i>
-                                        <h3 class="font-bold text-lg font-display">Core</h3>
-                                    </div>
-                                    <span class="text-[10px] font-mono opacity-50 border border-current px-1 rounded">V.25</span>
-                                </div>
-                                
-                                <div class="space-y-4">
-                                    <div>
-                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
-                                            <span>C++ / PYTHON</span>
-                                            <span>95%</span>
-                                        </div>
-                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden">
-                                            <div class="h-full bg-accent w-[95%]"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
-                                            <span>REACT / NODE</span>
-                                            <span>85%</span>
-                                        </div>
-                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden">
-                                            <div class="h-full bg-accent w-[85%]"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-current/10">
-                                        <span class="skill-pill">Firebase</span>
-                                        <span class="skill-pill">SQL</span>
-                                        <span class="skill-pill">Git</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="glass-card card-tall item-project" onclick="openModal('mobile')">
                             <div class="p-6 h-full flex flex-col justify-between">
                                 <i data-lucide="smartphone" class="w-8 h-8 text-accent"></i>
@@ -151,13 +116,35 @@
                             </div>
                         </div>
 
-                        <div class="glass-card stack-card item-skill">
-                            <div class="p-6">
-                                <i data-lucide="pen-tool" class="w-6 h-6 text-accent mb-3"></i>
-                                <h3 class="font-bold text-sm mb-2">Tools</h3>
-                                <div class="flex flex-wrap gap-2 text-[10px] font-mono opacity-80">
-                                    <span class="border border-current/20 px-2 py-1 rounded">Figma</span>
-                                    <span class="border border-current/20 px-2 py-1 rounded">Docker</span>
+                        <div class="glass-card card-tall item-skill">
+                            <div class="p-6 h-full flex flex-col">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="cpu" class="w-5 h-5 text-accent"></i>
+                                        <h3 class="font-bold text-lg font-display">Core</h3>
+                                    </div>
+                                    <span class="text-[10px] font-mono opacity-50 border border-current px-1 rounded">V.25</span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
+                                            <span>C++ / PYTHON</span>
+                                            <span>95%</span>
+                                        </div>
+                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden"><div class="h-full bg-accent w-[95%]"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-[10px] font-bold mb-1 opacity-80">
+                                            <span>REACT / NODE</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="h-1.5 w-full bg-current/10 rounded-full overflow-hidden"><div class="h-full bg-accent w-[85%]"></div></div>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-current/10">
+                                        <span class="skill-pill">Firebase</span>
+                                        <span class="skill-pill">SQL</span>
+                                        <span class="skill-pill">Git</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -183,12 +170,14 @@
                                 <p class="text-[9px] text-accent opacity-80 uppercase tracking-widest">Merch / Blogs / Recs</p>
                             </div>
                         </div>
+                        
                         <div class="glass-card card-tall relative overflow-hidden group" onclick="openModal('branding')">
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" class="img-cover opacity-60 group-hover:opacity-100 transition-opacity">
                             <div class="absolute bottom-4 left-4 z-10">
                                 <h3 class="text-xl font-bold text-accent font-display">Poster Art</h3>
                             </div>
                         </div>
+                        
                         <div class="glass-card media-card h-[180px]" onclick="openModal('promo')">
                             <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&q=80" class="img-cover">
                             <div class="play-overlay">

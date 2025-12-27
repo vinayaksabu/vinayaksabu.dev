@@ -36,10 +36,10 @@ body.mode-create.theme-light { --bg: var(--bg-crt-light); --text: var(--text-crt
 
 * { box-sizing: border-box; }
 
-/* MOBILE HEIGHT FIX: Use dvh (Dynamic Viewport Height) */
+/* MOBILE HEIGHT FIX */
 body { 
     margin: 0; font-family: var(--font-ui); background: #000; color: var(--text); 
-    height: 100dvh; /* Fixes address bar cutoff */
+    height: 100dvh; /* Dynamic height for mobile browsers */
     overflow: hidden; 
     display: flex; justify-content: center; align-items: center; 
     transition: all 0.6s ease; 
@@ -65,62 +65,65 @@ body.mode-create .particles-container { opacity: 0.3; }
     .ios-frame { max-width: 1100px; height: 92vh; border-radius: 44px; background: rgba(255,255,255,0.01); box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 50px 100px -20px rgba(0,0,0,0.5); backdrop-filter: blur(30px); } 
 }
 
-/* --- HEADER FIXES --- */
+/* --- HEADER (Fixed Overlap) --- */
 .top-bar { 
     padding: 16px 20px; 
     display: flex; 
-    justify-content: space-between; /* Ensures spacing between toggle/switch */
+    justify-content: space-between; 
     align-items: center; 
     position: relative; 
     z-index: 50; 
-    gap: 10px; /* Prevents touching */
+    gap: 10px;
 }
 
-/* Toggle Button */
+/* Theme Button */
 .theme-toggle-btn { 
     width: 40px; height: 40px; border-radius: 50%; 
     background: var(--glass); border: 1px solid var(--border); 
     display: flex; align-items: center; justify-content: center; 
     color: var(--text); cursor: pointer; transition: 0.3s; 
-    flex-shrink: 0; /* Prevents squishing on mobile */
-    position: relative; /* Changed from absolute to relative for mobile flex layout */
-    left: auto;
+    flex-shrink: 0; position: relative; left: auto;
 }
 
-/* Switch Container */
-.liquid-switch { 
-    position: relative; 
-    width: 100%; max-width: 260px; height: 44px; 
-    background: rgba(0,0,0,0.1); border-radius: 100px; 
-    display: flex; align-items: center; padding: 4px; 
-    border: 1px solid var(--border); backdrop-filter: blur(10px);
-    flex-grow: 1; /* Allows it to fill space on mobile */
+/* ICON STACK FIX (Prevents Cutting Off) */
+.icon-stack { 
+    position: relative; width: 20px; height: 20px; 
+    display: flex; align-items: center; justify-content: center;
 }
-body.theme-light .liquid-switch { background: rgba(255,255,255,0.5); }
-
-/* Switch Blob */
-.blob-pill { 
-    position: absolute; left: 4px; width: 48%; height: 36px; /* Use % for responsiveness */
-    background: var(--accent); border-radius: 100px; 
-    transition: transform 0.5s var(--ease-spring), background 0.5s; 
-    box-shadow: 0 0 15px var(--accent); 
+.icon-sun, .icon-moon { 
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    transition: 0.4s var(--ease-spring); 
 }
-.liquid-switch.switched .blob-pill { transform: translateX(100%); left: 2%; } /* Adjust slide for % width */
-
-.switch-txt { 
-    flex: 1; position: relative; z-index: 10; background: none; border: none; 
-    font-size: 10px; font-weight: 700; color: #888; cursor: pointer; transition: color 0.3s; 
-    white-space: nowrap; /* Prevent text wrapping */
-}
-.switch-txt.active { color: #fff; }
-
-.icon-stack { position: relative; width: 18px; height: 18px; }
-.icon-sun, .icon-moon { position: absolute; transition: 0.4s var(--ease-spring); }
 .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
 body.theme-dark .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
 body.theme-dark .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
 
-/* HERO (HOLOGRAPHIC ID) */
+/* Switch */
+.liquid-switch { 
+    position: relative; width: 100%; max-width: 260px; height: 44px; 
+    background: rgba(0,0,0,0.1); border-radius: 100px; 
+    display: flex; align-items: center; padding: 4px; 
+    border: 1px solid var(--border); backdrop-filter: blur(10px);
+    flex-grow: 1;
+}
+body.theme-light .liquid-switch { background: rgba(255,255,255,0.5); }
+
+.blob-pill { 
+    position: absolute; left: 4px; width: 48%; height: 36px; 
+    background: var(--accent); border-radius: 100px; 
+    transition: transform 0.5s var(--ease-spring), background 0.5s; 
+    box-shadow: 0 0 15px var(--accent); 
+}
+.liquid-switch.switched .blob-pill { transform: translateX(100%); left: 2%; }
+
+.switch-txt { 
+    flex: 1; position: relative; z-index: 10; background: none; border: none; 
+    font-size: 10px; font-weight: 700; color: #888; cursor: pointer; transition: color 0.3s; 
+    white-space: nowrap; 
+}
+.switch-txt.active { color: #fff; }
+
+/* HERO */
 .hero-id-container { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 30px 24px; min-height: 100px; }
 .hero-avatar-frame { 
     width: 80px; height: 80px; border-radius: 24px; 
@@ -138,31 +141,33 @@ body.theme-dark .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
 .mono-label { font-family: 'Space Grotesk'; font-size: 10px; letter-spacing: 1px; color: var(--accent); }
 
 /* FILTER BAR */
-.filter-bar { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; padding-left: 20px; padding-right: 20px; }
+.filter-wrapper { overflow-x: auto; margin: 0 20px 16px 20px; padding-bottom: 4px; }
+.filter-bar { display: flex; gap: 8px; width: max-content; }
 .filter-btn { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 100px; font-size: 10px; font-weight: 700; cursor: pointer; transition: 0.3s; opacity: 0.6; white-space: nowrap; }
 .filter-btn:hover, .filter-btn.active { opacity: 1; border-color: var(--accent); color: var(--accent); background: rgba(0,0,0,0.05); }
 
 /* GRID & CARDS */
-.scroll-canvas { 
-    flex: 1; overflow-y: auto; 
-    padding: 0 0 140px 0; /* Extra padding at bottom so dock doesn't cover content */
-    scrollbar-width: none; 
-}
+.scroll-canvas { flex: 1; overflow-y: auto; padding: 0 0 140px 0; scrollbar-width: none; }
 .view-layer { display: none; padding: 0 20px; animation: popUp 0.5s var(--ease-spring); }
 .view-layer.active { display: block; }
 @keyframes popUp { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 
 .bento-layout, .masonry-layout { 
     display: grid; gap: 12px; 
-    grid-template-columns: 1fr 1fr; /* 2 Columns Mobile */
+    grid-template-columns: 1fr 1fr; 
 }
 @media(min-width: 600px) { 
     .bento-layout, .masonry-layout { gap: 16px; }
 }
-/* Mobile Spans */
 .full-width-card, .col-span-2 { grid-column: span 2; }
 
-.glass-card { background: var(--glass); backdrop-filter: blur(40px); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; cursor: pointer; position: relative; transition: transform 0.3s var(--ease-spring), border-color 0.3s; }
+/* PORTRAIT CARD FIX */
+.card-tall { 
+    min-height: 260px; /* Ensures it looks like a portrait on mobile */
+    grid-row: span 2; 
+}
+
+.glass-card { background: var(--glass); backdrop-filter: blur(40px); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; cursor: pointer; position: relative; transition: transform 0.3s var(--ease-spring), border-color 0.3s; }
 .glass-card:hover { transform: translateY(-4px); border-color: var(--accent); }
 
 .skill-pill { font-size: 9px; border: 1px solid var(--border); padding: 3px 6px; border-radius: 4px; opacity: 0.8; }
@@ -172,24 +177,19 @@ body.theme-dark .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
 .glass-card:hover .img-cover { transform: scale(1.05); }
 
 /* FOOTER */
-.footer-container { margin-top: 30px; display: flex; justify-content: center; padding-bottom: 10px; }
+.footer-container { margin-top: 30px; display: flex; justify-content: center; padding-bottom: 20px; }
 .glass-pill-row { background: var(--glass); border: 1px solid var(--border); border-radius: 100px; padding: 8px 20px; display: flex; align-items: center; gap: 16px; backdrop-filter: blur(20px); }
 .footer-btn { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 10px; font-weight: 600; text-decoration: none; opacity: 0.7; transition: 0.2s; }
 .footer-btn:hover { opacity: 1; color: var(--accent); }
 .divider-v { width: 1px; height: 12px; background: var(--border); }
 
-/* DOCK (Fixed Cutoff) */
+/* DOCK */
 .glass-dock { 
-    position: absolute; 
-    bottom: 24px; /* Lifted up */
-    left: 50%; transform: translateX(-50%); 
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); 
     background: var(--glass); border: 1px solid var(--border); 
     border-radius: 100px; padding: 10px 24px; 
-    display: flex; gap: 24px; 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
-    z-index: 100; 
-    /* Safe Area for iPhone X and newer */
-    margin-bottom: env(safe-area-inset-bottom);
+    display: flex; gap: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+    z-index: 100; margin-bottom: env(safe-area-inset-bottom);
 }
 .dock-icon { color: var(--text); opacity: 0.6; transition: 0.3s; } .dock-icon:hover { opacity: 1; transform: translateY(-5px); color: var(--accent); }
 .dock-icon.main { background: var(--accent); color: #fff; padding: 12px; border-radius: 50%; margin-top: -20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); opacity: 1; }
