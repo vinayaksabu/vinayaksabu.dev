@@ -36,8 +36,7 @@
                 <button id="btn-create" class="switch-txt" onclick="setTab('create')">UPSIDE DOWN</button>
             </div>
 
-            <div style="width: 44px;"></div>
-        </header>
+            <div style="width: 40px;"></div> </header>
 
         <div class="scroll-canvas">
             
@@ -60,7 +59,7 @@
                 <div id="view-eng" class="view-layer active">
                     
                     <div class="filter-bar">
-                        <button class="filter-btn active" onclick="filterGrid('all')">ALL_DATA</button>
+                        <button class="filter-btn active" onclick="filterGrid('all')">ALL</button>
                         <button class="filter-btn" onclick="filterGrid('about')">BIO</button>
                         <button class="filter-btn" onclick="filterGrid('project')">PROJECTS</button>
                         <button class="filter-btn" onclick="filterGrid('skill')">SKILLS</button>
@@ -101,9 +100,9 @@
                                 <div class="flex items-center justify-between mb-6">
                                     <div class="flex items-center gap-2">
                                         <i data-lucide="cpu" class="w-5 h-5 text-accent"></i>
-                                        <h3 class="font-bold text-lg font-display">Technical Core</h3>
+                                        <h3 class="font-bold text-lg font-display">Core</h3>
                                     </div>
-                                    <span class="text-[10px] font-mono opacity-50 border border-current px-1 rounded">V.2025</span>
+                                    <span class="text-[10px] font-mono opacity-50 border border-current px-1 rounded">V.25</span>
                                 </div>
                                 
                                 <div class="space-y-4">
@@ -129,7 +128,6 @@
                                         <span class="skill-pill">Firebase</span>
                                         <span class="skill-pill">SQL</span>
                                         <span class="skill-pill">Git</span>
-                                        <span class="skill-pill">Flutter</span>
                                     </div>
                                 </div>
                             </div>
@@ -146,18 +144,19 @@
                         </div>
 
                         <div class="glass-card stat-card item-award" onclick="openModal('extreme')">
-                            <i data-lucide="zap" class="w-8 h-8 text-accent mb-2"></i>
-                            <h3 class="text-4xl font-bold font-display">Top 5%</h3>
-                            <p class="text-[10px] uppercase tracking-widest opacity-60">Global Rank</p>
+                            <div class="p-6 flex flex-col justify-center h-full">
+                                <i data-lucide="zap" class="w-8 h-8 text-accent mb-2"></i>
+                                <h3 class="text-4xl font-bold font-display">Top 5%</h3>
+                                <p class="text-[10px] uppercase tracking-widest opacity-60">Global Rank</p>
+                            </div>
                         </div>
 
                         <div class="glass-card stack-card item-skill">
                             <div class="p-6">
                                 <i data-lucide="pen-tool" class="w-6 h-6 text-accent mb-3"></i>
-                                <h3 class="font-bold text-sm mb-2">Design & Tools</h3>
+                                <h3 class="font-bold text-sm mb-2">Tools</h3>
                                 <div class="flex flex-wrap gap-2 text-[10px] font-mono opacity-80">
                                     <span class="border border-current/20 px-2 py-1 rounded">Figma</span>
-                                    <span class="border border-current/20 px-2 py-1 rounded">Photoshop</span>
                                     <span class="border border-current/20 px-2 py-1 rounded">Docker</span>
                                 </div>
                             </div>
@@ -203,7 +202,7 @@
                     <div class="glass-pill-row">
                         <a href="#" class="footer-btn">
                             <i data-lucide="coffee" class="w-4 h-4"></i>
-                            <span>Buy Coffee</span>
+                            <span>Support</span>
                         </a>
                         <div class="divider-v"></div>
                         <a href="#" class="footer-btn">
