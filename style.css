@@ -209,3 +209,29 @@ body.theme-light .liquid-switch { background: rgba(255,255,255,0.5); }
 .btn-outline { width: 100%; padding: 10px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-weight: 600; font-size: 12px; cursor: pointer; transition: 0.2s; }
 .btn-outline:hover { background: var(--glass); border-color: var(--accent); }
 .hidden-right { display: none; }
+/* --- INSTAGRAM FEED MASONRY --- */
+.feed-masonry {
+    column-count: 3; /* 3 Columns = Smaller Items */
+    column-gap: 8px; /* Space between columns */
+    width: 100%;
+}
+
+.feed-item {
+    break-inside: avoid; /* Prevents item from being cut in half */
+    margin-bottom: 8px; /* Space below item */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #000; /* Background for loading */
+    transform: translateZ(0); /* Fixes flickering */
+}
+
+/* On very small screens, switch to 2 columns so they aren't microscopic */
+@media (max-width: 400px) {
+    .feed-masonry { column-count: 2; }
+}
+
+/* Aspect Ratios classes */
+.ratio-reel { aspect-ratio: 9/16; } /* Tall */
+.ratio-post { aspect-ratio: 1/1; }  /* Square */
+.ratio-wide { aspect-ratio: 4/3; }  /* Landscape */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Vinayak Sabu | Hawkins OS</title>
+    <title>Vinayak Sabu | PERSONAL PORTFOLIO</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 
             <div class="liquid-switch">
                 <div class="blob-pill"></div>
-                <button id="btn-eng" class="switch-txt active" onclick="setTab('eng')">HAWKINS LAB</button>
+                <button id="btn-eng" class="switch-txt active" onclick="setTab('eng')">HAWKINS</button>
                 <button id="btn-create" class="switch-txt" onclick="setTab('create')">UPSIDE DOWN</button>
             </div>
 
@@ -43,14 +43,14 @@
             
             <div class="hero-id-container">
                 <div class="hero-avatar-frame">
-                    <img id="profile-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" class="hero-img">
+                    <img id="profile-img" src="me1.jpg" class="hero-img">
                     <div class="scan-line"></div>
                 </div>
                 <div class="hero-text-block">
                     <h1 class="glitch-name" data-text="Vinayak Sabu">Vinayak Sabu</h1>
                     <div class="id-badge">
                         <span class="status-indicator"></span>
-                        <span id="role-label" class="mono-label">SYSTEM_ARCHITECT</span>
+                        <span id="role-label" class="mono-label">TECH_VISIONARY</span>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,9 @@
                                     <span class="text-[10px] font-mono tracking-widest uppercase">Operator Bio</span>
                                 </div>
                                 <p class="text-sm leading-relaxed opacity-90">
-                                    Electrical & Electronics Engineering student at GEC Idukki. <span class="text-accent font-bold">IEEE Xtreme Ambassador</span> & Developer. I build systems that merge hardware logic with software fluidity.
+                                    System-level thinker blending engineering precision with modern digital creativity. I 
+                                    <span class="text-accent font-bold">design, build, and optimize</span>   
+                                     solutions that are purposeful, scalable, and impactful. 
                                 </p>
                             </div>
                         </div>
@@ -154,13 +156,18 @@
 
                 <div id="view-create" class="view-layer hidden-right">
                     <div class="masonry-layout">
-                        <div class="glass-card insta-card col-span-2 h-[200px] relative overflow-hidden group">
-                            <div class="absolute inset-0 bg-red-900/10 z-0"></div>
-                            <div class="relative z-10 flex flex-col items-center justify-center h-full">
-                                <i data-lucide="instagram" class="w-10 h-10 text-accent mb-3"></i>
-                                <h2 class="text-4xl font-bold font-display text-accent tracking-tighter">@EL_VINU</h2>
-                                <button class="mt-4 px-6 py-1.5 rounded-full border border-accent text-accent text-xs hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest">Enter The Void</button>
-                            </div>
+                        <div class="glass-card insta-card col-span-2 h-[200px] relative overflow-hidden group" onclick="window.open('https://www.instagram.com/el.vinu?igsh=MW45aGhkZTZseGp5bg==', '_blank')">
+                         <div class="absolute inset-0 bg-red-900/10 z-0"></div>
+                         <div class="relative z-10 flex flex-col items-center justify-center h-full">
+                         <i data-lucide="instagram" class="w-10 h-10 text-accent mb-3"></i>
+                         <h2 class="text-4xl font-bold font-display text-accent tracking-tighter">@EL.VINU</h2>
+        
+                         <button 
+                               class="mt-4 px-6 py-1.5 rounded-full border border-accent text-accent text-xs hover:bg-accent hover:text-white transition-colors font-bold uppercase tracking-widest"
+                               onclick="event.stopPropagation(); window.open('https://www.instagram.com/el.vinu?igsh=MW45aGhkZTZseGp5bg==', '_blank')">
+                            Enter The Void</button>
+    </div>
+</div>
                         </div>
                         <div class="glass-card mall-card col-span-2 h-[160px] relative overflow-hidden group cursor-pointer">
                             <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-red-900/20 z-0"></div>
@@ -178,41 +185,77 @@
                             </div>
                         </div>
                         
-                        <div class="glass-card media-card h-[180px]" onclick="openModal('promo')">
-                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&q=80" class="img-cover">
-                            <div class="play-overlay">
-                                <div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-white text-white"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <div class="col-span-2 feed-masonry">
 
-                <div class="footer-container">
-                    <div class="glass-pill-row">
-                        <a href="#" class="footer-btn">
-                            <i data-lucide="coffee" class="w-4 h-4"></i>
-                            <span>Support</span>
-                        </a>
-                        <div class="divider-v"></div>
-                        <a href="#" class="footer-btn">
-                            <i data-lucide="qr-code" class="w-4 h-4"></i>
-                            <span>UPI</span>
-                        </a>
-                        <div class="divider-v"></div>
-                        <a href="mailto:hi@vinayak.dev" class="footer-btn">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <span>Contact</span>
-                        </a>
+                    <div class="feed-item ratio-reel group">
+                        <iframe 
+                            src="https://www.instagram.com/reel/DR7lalYE3sH/embed/" 
+                            class="w-full h-full absolute inset-0 pointer-events-none scale-[105%]" 
+                            frameborder="0" scrolling="no" allowtransparency="true">
+                        </iframe>
+                        <a href="https://www.instagram.com/reel/DR7lalYE3sH/?igsh=MTJ3M3Q2MWx0ZmtmZw==/" target="_blank" class="absolute inset-0 z-20"></a>
                     </div>
+
+                    <div class="feed-item ratio-post group">
+                        <iframe 
+                            src="https://www.instagram.com/reel/DPEWmvjk5kC/embed/" 
+                            class="w-full h-full absolute inset-0 pointer-events-none scale-[105%]" 
+                            frameborder="0" scrolling="no" allowtransparency="true">
+                        </iframe>
+                        <a href="https://www.instagram.com/reel/DPEWmvjk5kC/?igsh=YW9hNHRrdmxmcXU0/" target="_blank" class="absolute inset-0 z-20"></a>
+                    </div>
+
+                    <div class="feed-item ratio-reel group">
+                        <iframe 
+                            src="https://www.instagram.com/reel/DSmq3QqmNa3/embed/" 
+                            class="w-full h-full absolute inset-0 pointer-events-none scale-[105%]" 
+                            frameborder="0" scrolling="no" allowtransparency="true">
+                        </iframe>
+                        <a href="https://www.instagram.com/reel/DSmq3QqmNa3/?igsh=bmozMnVkcWYzbDZl/" target="_blank" class="absolute inset-0 z-20"></a>
+                    </div>
+
+                    </div>
+
+            <div class="footer-container">
+                         <div class="glass-pill-row">
+                                  <a href="https://www.buymeacoffee.com/vinayaksabu" target="_blank" class="footer-btn">
+                                  <i data-lucide="coffee" class="w-4 h-4"></i>
+                                 <span>Support</span>
+                               </a>
+        
+                         <div class="divider-v"></div>
+        
+                               <a href="upi.jpg" target="_blank" class="footer-btn">
+                                <i data-lucide="qr-code" class="w-4 h-4"></i>
+                               <span>UPI</span>
+                               </a>
+        
+                         <div class="divider-v"></div>
+        
+                                 <a href="mailto:vinayaksabu8@gmail.com" class="footer-btn">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                <span>Contact</span>
+                               </a>
+                        </div>
+                   </div>
                 </div>
 
             </div>
         </div>
 
         <nav class="glass-dock">
-            <a href="#" class="dock-icon"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="dock-icon main"><span class="tooltip">RESUME</span><i data-lucide="file-text"></i></a>
-            <a href="#" class="dock-icon"><i data-lucide="github"></i></a>
+                 <a href="https://www.linkedin.com/in/vinayaksabu" target="_blank" class="dock-icon">
+                             <i data-lucide="linkedin"></i>
+                </a>
+    
+                <a href="Vinayak Resume 2025.pdf" target="_blank" class="dock-icon main">
+                              <span class="tooltip">RESUME</span>
+                              <i data-lucide="file-text"></i>
+                </a>
+    
+                 <a href="https://github.com/vinayaksabu" target="_blank" class="dock-icon">
+                              <i data-lucide="github"></i>
+                </a>
         </nav>
 
         <div id="modal-overlay" class="modal-wrapper">

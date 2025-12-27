@@ -11,9 +11,10 @@ const viewCreate = document.getElementById('view-create');
 const roleText = document.getElementById('role-label');
 const profileImg = document.getElementById('profile-img');
 
-// Photo Assets
-const PHOTO_ENG = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop";
-const PHOTO_CRT = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop";
+// --- PHOTO SETUP ---
+// FIXED: Engineering is me1.jpg, Creative is me2.webp
+const PHOTO_ENG = "me1.jpg"; 
+const PHOTO_CRT = "me2.webp";
 
 // Theme Logic
 function toggleTheme() {
@@ -29,6 +30,7 @@ function toggleTheme() {
 // Mode Switching
 function setTab(mode) {
     if (mode === 'create') {
+        // Switch to Creative (Upside Down)
         body.classList.remove('mode-eng');
         body.classList.add('mode-create');
         switchContainer.classList.add('switched');
@@ -40,8 +42,9 @@ function setTab(mode) {
         setTimeout(() => viewCreate.classList.add('active'), 200);
         
         roleText.innerText = "VISUAL_DESIGNER";
-        profileImg.src = PHOTO_CRT;
+        profileImg.src = PHOTO_CRT; // Swaps to me2.webp
     } else {
+        // Switch to Engineering (Hawkins Lab)
         body.classList.remove('mode-create');
         body.classList.add('mode-eng');
         switchContainer.classList.remove('switched');
@@ -52,8 +55,8 @@ function setTab(mode) {
         viewCreate.classList.remove('active');
         setTimeout(() => viewEng.classList.add('active'), 200);
 
-        roleText.innerText = "SYSTEM_ARCHITECT";
-        profileImg.src = PHOTO_ENG;
+        roleText.innerText = "TECH_VISIONARY";
+        profileImg.src = PHOTO_ENG; // Swaps back to me1.jpg
     }
 }
 
